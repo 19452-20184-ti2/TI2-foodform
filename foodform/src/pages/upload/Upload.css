@@ -1,0 +1,11 @@
+.uploadPageContainer{
+    padding-top: 50px;
+    display:flex;
+    justify-content: center;
+}
+.uploadContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+}

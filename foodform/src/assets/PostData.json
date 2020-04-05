@@ -1,0 +1,206 @@
+[
+  {
+    "_id": "5e5d886917b854007ea96ad3",
+	  "imgURL": "https://ipcdn.freshop.com/resize?url=https://images.freshop.com/1898839841148240393/5aec8ad23768858ddfaf029ada493a50_large.png&width=512&type=webp&quality=40",
+    "title": "Cheese Burger",
+    "description": "Easy 5 minute burger recepie! Recepie: Bla bla bla...",
+    "ingredients":
+    [
+      "bread",
+      "meat",
+      "cheese"
+    ],
+
+    "author": "Ti Manel",
+    "date": "02/02/2020",
+    "likes":25,
+    "comments":
+    [
+      "Yum!",
+      "Looks amazing!",
+      "Pog Aproves"
+    ]
+  },
+  {
+    "_id": "e9f43369-359c-4515-a0f1-bc071836bc4e",
+	  "imgURL": "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe/recipe-image/2017/09/slow-cooker-chicken-curry.jpg?itok=AsZZG54U",
+    "title": "Curry",
+    "description": "If you have time to spend letting a dish cook and love curry then try this recipe! Recepie: Bla bla bla...",
+    "ingredients":
+    [
+      "large onion, roughly chopped",
+      "skinless chicken legs", "fat removed",
+      "cooked brown rice"
+    ],
+
+    "author": "Tó Zé",
+    "date": "04/03/2020",
+    "likes":31,
+    "comments":
+    [
+      ":P",
+      "Instructions unclear, made toast"
+    ]
+  },
+  {
+    "_id": "6565ff56-bab4-4987-8c52-2bbc5c29b50b",
+	  "imgURL": "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/user-collections/my-colelction-image/2015/12/recipe-image-legacy-id--1035708_10.jpg?itok=h7NZg4G7",
+    "title": "Meat Balls",
+    "description": "Want to eat meatballs but don't want to go to IKEA on purpose? We got you! Recepie: Bla bla bla...",
+    "ingredients":
+    [
+      "1kg beef mince",
+      "2 eggs",
+      "spaghetti"
+    ],
+
+    "author": "Hacker Man",
+    "date": "09/01/2020",
+    "likes":69,
+    "comments":
+    [
+      "UwU what's this",
+      " ^ pls kill urself "
+    ]
+  },
+  {
+    "_id": "6e6d11f1-1279-4f86-a523-5bc01303c2a9",
+	  "imgURL": "https://www.pingodoce.pt/wp-content/uploads/2019/11/bacalhau-bras-com-legumes.jpg",
+    "title": "Bacalhau à-braz à la Tommy",
+    "description": "Did u forget to get Bacalhau? Fear not! Recepie: Bla bla bla...",
+    "ingredients":
+    [
+      "Tuna",
+      "Not Codfish",
+      "Corn Flakes"
+    ],
+
+    "author": "Tomas Colaço",
+    "date": "Some drunken night",
+    "likes":99999,
+    "comments":
+    [
+      "How does this even work?!"
+    ]
+  },
+  {
+    "_id": "763b80e2-d02d-4843-9abe-d9479cecf4a2",
+	  "imgURL": "https://sarahstup.com/wp/wp-content/uploads/2019/07/empty-plate.jpg",
+    "title": "Nothing",
+    "description": "Prato Tradicional de Uganda Recepie: Bla bla bla...",
+    "ingredients":
+    [
+      "Plate",
+      "Nothing"
+    ],
+
+    "author": "Ovuvuevuevue Enyetuenwuevue Ugbemugbem Osas",
+    "date": "??/??/??",
+    "likes":0,
+    "comments":
+    [
+      "I'm still hungry after eating 3 plates of this."
+    ]
+  },
+  {
+    "_id": "cad77891-a528-4b7c-affc-f74e24abac97",
+	  "imgURL": "https://www.peacefulmind.com/wp-content/uploads/2015/12/holy-water.jpg",
+    "title": "Holy Water",
+    "description": "Boil the hell out of it  Recepie: Bla bla bla...",
+    "ingredients":
+    [
+      "Water",
+      "Heat",
+      "Amen"
+    ],
+
+    "author": "Holy Spirit",
+    "date": "24/8/01",
+    "likes":3,
+    "comments":
+    [
+      "Burned my kitchen because of this, worth it tho"
+    ]
+  },
+  {
+    "_id": "32016af7-f8da-4aae-8113-86b3b13a2e67",
+	  "imgURL": "https://iportwine.com/wp-content/uploads/2019/02/lbv-port-wine-1.jpg",
+    "title": "Free Wine",
+    "description": "Ask the Father for his blessing and thine need for alcohol shall be quenched. Recepie: Bla bla bla...",
+    "ingredients":
+    [
+      "Water",
+      "Prayer"
+    ],
+
+    "author": "Jesus Christ",
+    "date": "00/00/00",
+    "likes":665,
+    "comments":
+    [
+      "May the lord be with you brother"
+    ]
+  },
+  {
+    "_id": "2916e985-ceca-4020-ac8b-ac0b0993d07c",
+	  "imgURL": "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--1074495_11.jpg?itok=ZeOmX4dB",
+    "title": "Chicken Soup",
+    "description": "If you ever feel sick try my grandgrandmothers chicken soup ^^ Recepie: Bla bla bla...",
+    "ingredients":
+    [
+      "Chicken",
+      "lemon juice",
+      "olive oil"
+    ],
+
+    "author": "Maria Albertina",
+    "date": "28/02/57",
+    "likes":213,
+    "comments":
+    [
+      "Loved it, it worked on my son, thank you!",
+      "Does it work on cats?"
+    ]
+  },
+  {
+    "_id": "71b630d6-eb55-4198-bd0d-e1b8377e4737",
+	  "imgURL": "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/turkey-meatloaf.jpg?itok=meBTpmuI",
+    "title": "Turkey Meatloaf",
+    "description": "Looking for something to fill you and your family? Hopefully this does it. Recepie: Bla bla bla...",
+    "ingredients":
+    [
+      "turkey mince",
+      "beans",
+      "tomato purée"
+    ],
+
+    "author": "Jaquim Manel",
+    "date": "12/12/12",
+    "likes":1212,
+    "comments":
+    [
+      "I'm so full i can't sit properly"
+    ]
+  },
+  {
+    "_id": "50762be5-c971-4c86-9f30-dfee1af7f3ae",
+	  "imgURL": "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--77500_12.jpg?itok=sJ2MYNsV",
+    "title": "Potato Salad",
+    "description": "Potato runs in my veins,this is my blood. Recepie: Bla bla bla...",
+    "ingredients":
+    [
+      "small potatos",
+      "mayonnaise",
+      "olive oil",
+      "vinegar"
+    ],
+
+    "author": "Random potato farmer",
+    "date": "12/04/10",
+    "likes":13,
+    "comments":
+    [
+      "This will go great with my toast with holy water!"
+    ]
+  }
+]
