@@ -1,7 +1,7 @@
 import React from 'react';
 import './Feed.css';
 import Post from '../../components/post/Post.js';
-import PostData from '../../assets/PostData.json';
+import PostData from '../../services/PostData.json';
 import DetailedPost from '../../components/detailedPost/DetailedPost.js';
 import SearchBar from '../../components/searchbar/SearchBar';
 

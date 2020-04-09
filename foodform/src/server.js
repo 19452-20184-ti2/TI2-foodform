@@ -2,16 +2,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+require('dotenv').config();
+const postsRoute = require('./routes/posts-route.js');
 
 //inicializar o express
 const app = express();
+
 
 //inibir o parsing do http request body
 app.use(bodyParser.json());
 app.use(cors());
 
 //rotas e chamadas de API
-app.use ('/hello', (req, res) => res.send('Hello World'));
+app.use ('/posts', postsRoute);
 
 //start node server
 const port = process.env.PORT || 3000;
