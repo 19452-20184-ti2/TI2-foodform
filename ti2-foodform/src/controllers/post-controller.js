@@ -17,13 +17,13 @@ exports.getPost = (req, res) => {
 exports.postPost = (req, res) => {
     return postService
         .addPost(req.body)
-            .then(result => res.json(result))
+            .then(result => res.json(result.save()))
             .catch(err => res.status(500).send(err.message));
 };
 
 exports.putPost = (req, res) => {
     return postService
-        .updatePost(res.params.id, req.body)
+        .updatePost(req.params.id, req.body)
             .then(result => res.json(result))
             .catch(err => res.status(500).send(err.message));
 };

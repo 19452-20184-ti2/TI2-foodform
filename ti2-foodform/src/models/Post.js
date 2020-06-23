@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 
 const PostSchema = mongoose.Schema({
     //id vai ser gerado com UUID
-    _id: {
-        type:String,
-        require: true
-    },
     title:{
         type: String,
         require: true
@@ -17,23 +13,21 @@ const PostSchema = mongoose.Schema({
         require: true
     },
     ingredients:{
-        type: String
+        type: String,
+        default:null
     },
     date: {
         type: Date,
         default: Date.now
     },
-    nLikes:{
-        type: Number,
-        default: 0
-    },
     imgURL:{
-        type: String
+        type: String,
+        default: null //<- arranjar uma imagem base
     },
-    userID:{
-        type: Number,
+    user:{
+        type: String, //<-Object id no futuro
         require: true
     }
 });
 
-module.exports = mongoose.model('Posts', PostSchema);
+module.exports = mongoose.model('Post', PostSchema);

@@ -2,12 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const ComentariosSchema = mongoose.Schema({
+const ComentarioSchema = mongoose.Schema({
     //id vai ser gerado com UUID
-    _id:{
-        type: String,
-        require: true
-    },
     userID:{
         type: String,
         require: true
@@ -26,4 +22,4 @@ const ComentariosSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Comentarios', ComentariosSchema);
+module.exports = mongoose.model('Comentario', ComentarioSchema);

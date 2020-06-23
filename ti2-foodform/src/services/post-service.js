@@ -1,31 +1,47 @@
-const posts = require('./test-post.json')//<--- vamos ter de ir buscar a base de dados
+const mongoose = require('mongoose');
+const Post = require('../models/Post');
 
 exports.getPosts = () => {
     return new Promise ((resolve, reject) => {
-        resolve(posts);
+        resolve(Post.find());
     });
 };
 
 exports.getPost = id => {
     return new Promise ((resolve, reject) => {
-        resolve(posts.find(post => post._id === id));
+        resolve(Post.findById(id));
     });
 };
 
 exports.addPost = (post) => {
     return new Promise((resolve, reject) =>{
-        resolve({inserted:1});
+        resolve(new Post({
+            title: post.title,
+            description: post.description,
+            ingredients: post.ingredients,
+            imgURL: post.imgURL,
+            user: post.user
+        }));
     });
 };
 
 exports.updatePost = (id, post) => {
     return new Promise((resolve, reject) => {
-        resolve({update:1});
+        resolve( Post.updateOne(
+            {_id: id},
+            {$set: {
+                title: post.title,
+                description: post.description,
+                ingredients: post.ingredients,
+                imgURL: post.imgURL,
+                user: post.user
+            }}
+        ));
     });
 };
 
 exports.deletePost = id => {
     return new Promise((resolve, reject) =>{
-        resolve({deleted:1});
+        resolve( Post.deleteOne({_id: id}) );
     });
 };
