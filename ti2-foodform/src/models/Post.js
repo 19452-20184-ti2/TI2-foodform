@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 
 const PostSchema = mongoose.Schema({
-    //id vai ser gerado com UUID
     title:{
         type: String,
         require: true
@@ -13,8 +12,7 @@ const PostSchema = mongoose.Schema({
         require: true
     },
     ingredients:{
-        type: String,
-        default:null
+        type: String
     },
     date: {
         type: Date,
@@ -24,7 +22,7 @@ const PostSchema = mongoose.Schema({
         type: String,
         default: null //<- arranjar uma imagem base
     },
-    user:{
+    userID:{
         type: String, //<-Object id no futuro
         require: true
     }

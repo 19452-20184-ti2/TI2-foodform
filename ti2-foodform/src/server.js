@@ -9,8 +9,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //Routes
-const postRoutes = require('./routes/post-route')
+const postRoutes = require('./routes/post-route');
 app.use('/posts', postRoutes);
+const commentRoutes = require('./routes/comment-route');
+app.use('/comments', commentRoutes);
 
 
 //Connect to DB

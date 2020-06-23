@@ -20,7 +20,7 @@ exports.addPost = (post) => {
             description: post.description,
             ingredients: post.ingredients,
             imgURL: post.imgURL,
-            user: post.user
+            userID: post.user
         }));
     });
 };
@@ -34,7 +34,7 @@ exports.updatePost = (id, post) => {
                 description: post.description,
                 ingredients: post.ingredients,
                 imgURL: post.imgURL,
-                user: post.user
+                userID: post.user
             }}
         ));
     });
