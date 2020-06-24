@@ -13,6 +13,8 @@ const postRoutes = require('./routes/post-route');
 app.use('/posts', postRoutes);
 const commentRoutes = require('./routes/comment-route');
 app.use('/comments', commentRoutes);
+const likeRoutes = require('./routes/like-route');
+app.use('/likes', likeRoutes);
 
 
 //Connect to DB
