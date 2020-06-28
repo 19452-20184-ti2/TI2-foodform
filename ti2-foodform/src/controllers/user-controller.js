@@ -2,7 +2,7 @@ const userService = require('../services/user-service');
 const jwt = require('../helpers/jwt');
 
 exports.register = (req, res) => {
-    return userService.register(req.body.username, req.body.password)
+    return userService.register(req.body)
         .then(result => res.json(result.save()))
         .then( () => res.sendStatus(200))
         .catch( err => res.status(500).send(err.message) );

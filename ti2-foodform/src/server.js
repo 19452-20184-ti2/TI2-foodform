@@ -16,6 +16,7 @@ app.use('/comments', commentRoutes);
 const likeRoutes = require('./routes/like-route');
 app.use('/likes', likeRoutes);
 const userRoutes = require('./routes/user-route');
+app.use('/users', userRoutes);
 
 //Connect to DB
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () =>

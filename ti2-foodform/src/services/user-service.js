@@ -2,17 +2,17 @@ const mongoose = require('mongoose');
 const User = require('../models/User');
 const cipher = require('../helpers/cipher');
 
-exports.register = (username, rawPassword) => {
+exports.register = (user) => { //previous parameters were (username, password)
     return new Promise((resolve, reject) =>{
         try{
-            const u = User.findOne({username: username});
+            const u = User.findOne({username: user.username});
             if (u == null) {
-                if (/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d$@$!%*#?&-.]{8,}$/.test(rawPassword)){
+                if (/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d$@$!%*#?&-.]{8,}$/.test(user.rawPassword)){
                     const dataIv = cipher.generateIv();
-                    const password = cipher.encrypt(rawPassword, dataIv);
+                    const password = cipher.encrypt(user.rawPassword, dataIv);
                     resolve(
                         new User ({
-                            username: username,
+                            username: user.username,
                             password: password,
                             //email: email
                             //role: role

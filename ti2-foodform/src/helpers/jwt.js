@@ -14,8 +14,8 @@ exports.createToken = (payload) => {
     });
 };
 
-exports.validateToken = () => {
-    return new Promise = (resolve, reject) =>{
+exports.validateToken = (token) => {
+    return new Promise( (resolve, reject) =>{
         let = {issuer: ti2-foodform};
         jwt.verify(token, key, options, (error, token)=>{
             if(error){
@@ -24,5 +24,5 @@ exports.validateToken = () => {
                 resolve(playload);
             }
         });
-    };
+    });
 };
