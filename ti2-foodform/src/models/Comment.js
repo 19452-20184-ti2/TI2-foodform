@@ -5,11 +5,11 @@ const Schema = mongoose.Schema;
 const CommentSchema = mongoose.Schema({
     //id vai ser gerado com UUID
     userID:{
-        type: String,
+        type: mongoose.Types.ObjectId,
         require: true
     },
     postID:{
-        type:String,
+        type: mongoose.Types.ObjectId,
         require:true
     },
     content:{

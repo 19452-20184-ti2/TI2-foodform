@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const key = process.env.CIPHER_KEY;
 
 exports.generateIv = () => {
-    return crypto.randomBytes(8).tostring('hex');
+    return crypto.randomBytes(8).toString('hex');
 };
 
 exports.encrypt = (data, iv) => {
@@ -12,5 +12,5 @@ exports.encrypt = (data, iv) => {
 
 exports.decrypt = (data, iv) => {
     const decipher = crypto.createDecipheriv('aes-256-cbc', key, iv);
-    return decipher.update(Buffer.from(data), 'hex', 'utf8') + decipher.final('utf8');
+    return decipher.update(data, 'hex', 'utf8') + decipher.final('utf8');
 };

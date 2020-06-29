@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 
 const LikeSchema = mongoose.Schema({
     userID:{
-        type: String,
+        type: mongoose.Types.ObjectId,
         require: true
     },
     postID:{
-        type: String,
+        type: mongoose.Types.ObjectId,
         require:true
     },
     liked:{ 

@@ -1,39 +1,46 @@
 const mongoose = require('mongoose');
 const User = require('../models/User');
 const cipher = require('../helpers/cipher');
+const roles = require('../helpers/roles');
 
-exports.register = (user) => { //previous parameters were (username, password)
+exports.register = (user) => {
     return new Promise((resolve, reject) =>{
         try{
-            const u = User.findOne({username: user.username});
-            if (u == null) {
-                if (/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d$@$!%*#?&-.]{8,}$/.test(user.rawPassword)){
-                    const dataIv = cipher.generateIv();
-                    const password = cipher.encrypt(user.rawPassword, dataIv);
-                    resolve(
-                        new User ({
-                            username: user.username,
-                            password: password,
-                            //email: email
-                            //role: role
-                            dataIv: dataIv
-                        })                    
-                    )
-                } else { reject ('Invalid password!'); }
-            } else { reject ('That username has already been used.'); }
+            User.findOne({username: user.username}, function(err, res){
+                if (!res) {
+                    if(Object.values(roles).indexOf(user.role)>-1){
+                        if (/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d$@$!%*#?&-.]{8,}$/.test(user.password)){
+                            const dataIv = cipher.generateIv();
+                            const password = cipher.encrypt(user.password, dataIv);
+                            resolve(
+                                new User ({
+                                    username: user.username,
+                                    password: password,
+                                    //email: email
+                                    role: user.role,
+                                    dataIv: dataIv
+                                }).save()       
+                            );
+                        } else { reject ('Invalid password!'); }
+                    } else { reject("Invalid role."); }
+                } else { reject("Username in use.")}
+            });
         } catch (error) { reject(error.message); }
     });
 };
 
 exports.authenticate = (username, rawPassword) => {
-    return new Promise((resolve, reject)=>{
-        let user = User.findOne({username: username});
-        if(user != null){
-            user = json(user); //just to be sure it is json :D
-            const password = cipher.decrypt(user.password, user.dataIv);
-            if(password == rawPassword){
-                resolve({_id: user.id});
-            }
-        } else { reject ('That username has already been used.'); }
+    return new Promise( (resolve, reject) => {
+        User.findOne({username: username}, function(err, res){
+            if(res){
+                console.log(res.password);
+                console.log(res.dataIv);
+                const password = cipher.decrypt(res.password, res.dataIv);
+                if(password == rawPassword){
+                    resolve({_id: res._id,});
+                }
+                reject("Username and password don't match.")
+            } 
+        });    
     });
 };

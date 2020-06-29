@@ -23,7 +23,7 @@ const PostSchema = mongoose.Schema({
         default: null //<- arranjar uma imagem base
     },
     userID:{
-        type: String, //<-Object id no futuro
+        type: mongoose.Types.ObjectId,
         require: true
     }
 });
