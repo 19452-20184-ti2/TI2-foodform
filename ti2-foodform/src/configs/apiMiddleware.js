@@ -1,13 +1,13 @@
 const serverURL="http://localhost:" + process.env.SERVER_PORT;
 
 export const apiRequest = (method, route, body) => {
-    //let currentUser = sessionStorage.getItem("user");
-    return new Promise ((resolve,reject)=> {
+    let currentUser = sessionStorage.getItem("user");
+    return new Promise ((resolve, reject) => {
         fetch(serverURL + route, {
             method,
             headers:{
                 "Content-Type": "application/json",
-                //...(currentUser &&{Authorization: JSON.parse(currentUser).token}),
+                ...(currentUser && { Authorization: JSON.parse(currentUser).token }),
             },
             ...(body && { body: JSON.stringify(body) }),
         })

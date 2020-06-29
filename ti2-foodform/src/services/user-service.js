@@ -33,14 +33,14 @@ exports.authenticate = (username, rawPassword) => {
     return new Promise( (resolve, reject) => {
         User.findOne({username: username}, function(err, res){
             if(res){
-                console.log(res.password);
-                console.log(res.dataIv);
                 const password = cipher.decrypt(res.password, res.dataIv);
                 if(password == rawPassword){
-                    resolve({_id: res._id,});
+                    resolve({_id: res._id, role: res.role});
                 }
                 reject("Username and password don't match.")
-            } 
+            } else{ 
+                reject("Username does not exist!");
+        }
         });    
     });
 };

@@ -16,7 +16,7 @@ const UserSchema = mongoose.Schema({
     //     require: true
     // },
     role:{
-        type:String,
+        type:Number,
         require:true
     },
     dataIv:{

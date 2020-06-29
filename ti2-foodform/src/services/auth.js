@@ -1,14 +1,6 @@
 import { apiRequest } from "../configs/apiMiddleware";
 
-const register = (body) => {
-    return apiRequest("POST", "/user/register", body);
-};
-
-const login = (body) => {
-    return apiRequest("POST", "/user/login", body);
-};
-
 export default{
-    register,
-    login
+    register: body => apiRequest("POST", "/user/register", body),
+    login: body => apiRequest("POST", "/user/login", body)
 }

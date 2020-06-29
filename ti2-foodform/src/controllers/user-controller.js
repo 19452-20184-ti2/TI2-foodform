@@ -4,7 +4,6 @@ const jwt = require('../helpers/jwt');
 exports.register = (req, res) => {
     return userService
         .register(req.body)
-            .then( result => res.json(result))
             .then( () => res.sendStatus(200))
             .catch( err => res.status(500).send(err.message) );
 };
