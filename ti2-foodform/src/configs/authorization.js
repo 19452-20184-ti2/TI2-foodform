@@ -1,7 +1,7 @@
 const jwt = require('../helpers/jwt');
 
 module.exports=(...roles) => {
-    return(req,res,next) => {
+    return(req, res, next) => {
         if(req.headers.authorization){
             jwt.validateToken(req.headers.authorization).then((payload) => {
                 if(roles.length > 0 && !roles.some((r) => r == payload.role)){

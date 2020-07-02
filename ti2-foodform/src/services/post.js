@@ -1,6 +1,6 @@
 import {apiRequest} from"../configs/apiMiddleware"; 
 
-export default{ 
+export default { 
     getAllPosts:()=>apiRequest("GET",`/posts`),
     getOnePost:(id)=>apiRequest("GET",`/posts/${id}`),
     createPost:(body)=>apiRequest("POST",`/posts/upload`, body),

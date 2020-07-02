@@ -5,14 +5,15 @@ import { Route, Redirect} from"react-router-dom";
 export default class PrivateRoute extends React.Component {
     static contextType = AuthContext;
     render(){
-        const { component: Component, roles, ...rest } = this.props; const { user } = this.context;
+        const { component: Component, roles, ...rest } = this.props; 
+        const { user } = this.context;
         return(
             <Route 
                 {...rest} 
                 render = {(props) => 
                     user && roles.some( (r) => r === user.role ) ? 
                     <Component {...props}/>:
-                    <Redirect to="/" />
+                    <Redirect to="/" /> //colocar um alerta da dizer que o utilizador nao tem acesso a esta rota
                 }
             />
         );

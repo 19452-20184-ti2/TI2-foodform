@@ -1,6 +1,6 @@
 import React from"react";
 import services from"../../services";
-import { Form, Button, Card } from"react-bootstrap";
+import { Form, Button, Card } from "react-bootstrap";
 import AuthContext from "../../configs/authContext";
 import "./Auth.css"; 
 

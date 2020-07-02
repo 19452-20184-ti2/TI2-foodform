@@ -38,7 +38,7 @@ export default class RegisterPage extends React.Component {
                                 <Form.Label>Role</Form.Label>
                                 <Form.Control as="select" value={role} onChange={(evt)=>this.setState({role:parseInt(evt.target.value)})}>
                                     <option value = {2}>Admin</option>
-                                    <option value={1}>User</option>
+                                    <option value = {1}>User</option>
                                 </Form.Control>
                             </Form.Group>
 

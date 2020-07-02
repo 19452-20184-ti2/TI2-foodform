@@ -3,9 +3,9 @@ import commentService from "./comment.js";
 import likeService from "./like.js";
 import authService from "./auth.js";
 
-export default{
+export default {
     post: postService,
-    comment: commentService,
-    likeService: likeService,
+    // comment: commentService,
+    // like: likeService,
     auth: authService
 }

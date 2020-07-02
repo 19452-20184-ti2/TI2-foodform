@@ -9,21 +9,32 @@ export default class AuthComponent extends React.Component{
         this.setState = {
             user: user ? JSON.parse(user) : undefined,
             login: this.login,
-            logout: this.logout
+            logout: this.logout,
         };
     }
 
-    logout = (user) => {
+    /**
+     * Faz o login e o objecto user restornado do servidor é guardado como state do componente AuthComponent.
+     * @param {*} user 
+     */
+    login = (user) => {
         sessionStorage.setItem("user", JSON.stringify(user));
-        this.setState({ user: user})
+        this.setState({ user: user});
     };
 
-    logou = () => {
+    /**
+     * Faz o logout e o objecto user passa a undifined no state do componenete Auth Component
+     */
+    logout = () => {
         sessionStorage.removeItem("user");
         this.setState({ user: undefined});
     };
 
     render(){
-    return <AuthContext.Provider value={this.state}>{this.props.children}</AuthContext.Provider>;
+    return (
+        <AuthContext.Provider value={this.state}>
+            {this.props.children}
+        </AuthContext.Provider>)
+        ;
     }
 }
