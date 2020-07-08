@@ -6,7 +6,7 @@ export default class AuthComponent extends React.Component{
     constructor(props){
         super(props);
         const user = sessionStorage.getItem("user");
-        this.setState = {
+        this.state = {
             user: user ? JSON.parse(user) : undefined,
             login: this.login,
             logout: this.logout,
