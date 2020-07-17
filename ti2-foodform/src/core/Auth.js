@@ -14,7 +14,7 @@ export default class AuthComponent extends React.Component{
     }
 
     /**
-     * Faz o login e o objecto user restornado do servidor é guardado como state do componente AuthComponent.
+     * Faz o login e o objecto user retornado do servidor é guardado como state do componente AuthComponent.
      * @param {*} user 
      */
     login = (user) => {

@@ -8,7 +8,7 @@ export default class LoginPage extends React.Component{
     static contextType = AuthContext;
     constructor(props){
         super(props);
-        this.state = {username:"admin", password:"123qweASD"};
+        this.state = {username:"teste", password:"Bananas1234"};
     }
     
     handleSubmit(evt){

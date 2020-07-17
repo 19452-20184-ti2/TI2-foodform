@@ -18,10 +18,10 @@ export default class RouterComponent extends React.Component{
                 <NavbarComponent/>
                 <Switch>
                     <Route exact path="/register" component = {RegisterPage}/>
-                    <Route exactpath="/login" component = {LoginPage}/>
-                    <Route exactpath="/about" component = {AboutPage}/>
-                    <PrivateRoute roles = {[1,2]} exactpath = "/posts" component = {FeedPage}/>
-                    <PrivateRoute roles = {[1,2]} exactpath = "/posts/:id" component = {PostPage}/> 
+                    <Route exact path="/login" component = {LoginPage}/>
+                    <Route exact path="/about" component = {AboutPage}/>
+                    <PrivateRoute roles = {[1,2]} exact path = "/posts" component = {FeedPage}/>
+                    <PrivateRoute roles = {[1,2]} exact path = "/posts/:id" component = {PostPage}/> 
                     <Route path = "*" component = {HomePage}/>
                 </Switch>
             </Router>
