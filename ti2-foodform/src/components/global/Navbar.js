@@ -13,7 +13,7 @@ export default class NavbarComponent extends React.Component{
                     <Navbar.Collapse id="basic-navbar-nav">
 
                         <Nav className="mr-auto">
-                            <Nav.Link as = {NavLink} exact to = "/">Home</Nav.Link>
+                            <Nav.Link as = {NavLink} exact to = "/">FoodForm</Nav.Link>
                             <Nav.Link as = {NavLink} to = "/posts">Feed</Nav.Link>
                             {user && <Nav.Link as = {NavLink} to = "/upload" >Upload</Nav.Link>}
                             <Nav.Link as = {NavLink} to = "/about">About</Nav.Link>
@@ -24,7 +24,7 @@ export default class NavbarComponent extends React.Component{
                             {user ? 
                                 <NavDropdown title = {user.username} alignRight>
                                     <NavDropdown.Item onClick = { () => logout() }>Logout</NavDropdown.Item>
-                                    <Nav.Link as = {NavLink} to = {`/users/${user._id}`} >User Page</Nav.Link>
+                                    <Nav.Link as = {NavLink} to = {`/users/${user._id}`}><NavDropdown.Item>User Page</NavDropdown.Item></Nav.Link>
                                 </NavDropdown>
                                 :
                                 <Nav.Link as = {NavLink} to="/login">Login</Nav.Link>
