@@ -21,7 +21,8 @@ export default class RouterComponent extends React.Component{
                     <Route exact path="/login" component = {LoginPage}/>
                     <Route exact path="/about" component = {AboutPage}/>
                     <PrivateRoute roles = {[1,2]} exact path = "/posts" component = {FeedPage}/>
-                    <PrivateRoute roles = {[1,2]} exact path = "/posts/:id" component = {PostPage}/> 
+                    <PrivateRoute roles = {[1,2]} exact path = "/posts/:id" component = {PostPage}/>
+                    <PrivateRoute roles = {[1,2]} exact path = "/upload" component = {UploadPage}/> 
                     <Route path = "*" component = {HomePage}/>
                 </Switch>
             </Router>
