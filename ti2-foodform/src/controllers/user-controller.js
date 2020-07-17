@@ -9,8 +9,9 @@ exports.register = (req, res) => {
 };
 
 exports.login = (req, res) => {
-    return userService.authenticate(req.body.username, req.body.password)
-        .then((payload) => jwt.createToken(payload))
-        .then((data) => res.json(data))
-        .catch(err => res.status(500).send(err.message))
+    return userService
+        .authenticate(req.body.username, req.body.password)
+            .then((payload) => jwt.createToken(payload))
+            .then((data) => res.json(data))
+            .catch(err => res.status(500).send(err.message))
 };

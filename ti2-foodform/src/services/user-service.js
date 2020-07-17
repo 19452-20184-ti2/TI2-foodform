@@ -12,18 +12,24 @@ exports.register = (user) => {
                         if (/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d$@$!%*#?&-.]{8,}$/.test(user.password)){
                             const dataIv = cipher.generateIv();
                             const password = cipher.encrypt(user.password, dataIv);
+                            console.log("User Creating");
                             resolve(
                                 new User ({
                                     username: user.username,
                                     password: password,
-                                    //email: email
                                     role: user.role,
                                     dataIv: dataIv
                                 }).save()       
                             );
-                        } else { reject ('Invalid password!'); }
-                    } else { reject("Invalid role."); }
-                } else { reject("Username in use.")}
+                        } else { 
+                            console.log("Invalid Password");
+                            reject ('Invalid password!'); }
+                    } else { 
+                        console.log("Invalid Role");
+                        reject("Invalid role."); }
+                } else { 
+                    console.log("Invalid Username");
+                    reject("Username in use.")}
             });
         } catch (error) { reject(error.message); }
     });
@@ -35,6 +41,7 @@ exports.authenticate = (username, rawPassword) => {
             if(res){
                 const password = cipher.decrypt(res.password, res.dataIv);
                 if(password == rawPassword){
+                    console.log("Logged In!")
                     resolve({_id: res._id, role: res.role});
                 }
                 reject("Username and password don't match.")

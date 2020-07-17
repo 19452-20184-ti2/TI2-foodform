@@ -1,4 +1,5 @@
-const serverURL="http://localhost:" + process.env.SERVER_PORT;
+// const serverURL="http://localhost:" + process.env.SERVER_PORT;
+const serverURL="http://localhost:3001";
 
 export const apiRequest = (method, route, body) => {
     let currentUser = sessionStorage.getItem("user");
