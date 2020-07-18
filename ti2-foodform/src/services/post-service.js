@@ -20,7 +20,7 @@ exports.addPost = (post) => {
             description: post.description,
             ingredients: post.ingredients,
             imgURL: post.imgURL,
-            userID: post.user
+            userID: post.userID
         }));
     });
 };
