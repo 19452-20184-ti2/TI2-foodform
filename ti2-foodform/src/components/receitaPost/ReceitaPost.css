@@ -1,0 +1,14 @@
+.receitaPost{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+img{
+    height:300px;
+    width:300px;
+}
+
+p{
+    text-align: center;
+}

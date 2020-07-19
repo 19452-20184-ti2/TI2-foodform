@@ -15,8 +15,7 @@ export default class NavbarComponent extends React.Component{
                         <Nav className="mr-auto">
                             <Nav.Link as = {NavLink} exact to = "/">FoodForm</Nav.Link>
                             {user && <Nav.Link as = {NavLink} to = "/upload" >Upload</Nav.Link>}
-                            <Nav.Link as = {NavLink} to = "/about">About</Nav.Link>
-                                                       
+                            <Nav.Link as = {NavLink} to = "/about">About</Nav.Link>                          
                         </Nav>
                         
                         <Nav>

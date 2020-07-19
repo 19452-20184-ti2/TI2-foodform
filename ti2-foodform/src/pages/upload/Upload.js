@@ -24,7 +24,7 @@ export default class Upload extends React.Component{
         const { title , description, ingredients, imgURL } = this.state;
         return(
             <div>
-                <Form onSubmit = {(evt)=>this.handleSubmit(evt)}>
+                <Form onSubmit={(evt)=>this.handleSubmit(evt)} >
                     <Card.Title>Create your post</Card.Title>
 
                     <Form.Group>
