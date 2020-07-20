@@ -13,6 +13,12 @@ exports.getPost = id => {
     });
 };
 
+exports.getUserPosts = id => {
+    return new Promise ((resolve, reject) => {
+        resolve(Post.find({userID: id}));
+    });
+}
+
 exports.addPost = (post) => {
     return new Promise((resolve, reject) =>{
         resolve(new Post({

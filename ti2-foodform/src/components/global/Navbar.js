@@ -21,8 +21,8 @@ export default class NavbarComponent extends React.Component{
                         <Nav>
                             {user ? 
                                 <NavDropdown title = {user.username} alignRight>
+                                    <NavDropdown.Item><Nav.Link as = {NavLink} to = {`/user/${user._id}`}>User Page</Nav.Link></NavDropdown.Item>
                                     <NavDropdown.Item onClick = { () => logout() }>Logout</NavDropdown.Item>
-                                    <Nav.Link as = {NavLink} to = {`/user/${user._id}`}><NavDropdown.Item>User Page</NavDropdown.Item></Nav.Link>
                                 </NavDropdown>
                                 :
                                 <Nav.Link as = {NavLink} to="/login">Login</Nav.Link>

@@ -16,10 +16,10 @@ exports.getAllLikes = () => {
  * Gets all the likes associated with this post.
  * @param {*} id 
  */
-exports.getPostLikes = id => {
+exports.getPostLikes = uid => {
     return new Promise((resolve, reject) =>{
         resolve(
-            Like.find({postID:id})
+            Like.find({postID:uid})
         )
     });
 };

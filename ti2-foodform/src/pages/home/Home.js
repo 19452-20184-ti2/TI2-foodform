@@ -21,8 +21,8 @@ export default class Home extends React.Component{
         .then((value) => this.setState({ posts: value}))
         .catch((err) => this.setState({ error: err }));
     
-    renderAllPosts = () =>{
-        const receitas = this.state.posts.map( post => {
+    renderAllPosts = () =>
+        this.state.posts.map( post => {
             let ing = post.ingredients.trim().split(';');
             return <ReceitaPost
                 show = {this.showSinglePost}
@@ -33,8 +33,6 @@ export default class Home extends React.Component{
                 ingredients = {ing.length-1}
             />
         });
-        return receitas;
-    }
 
     showPostsByTitle = () => {
         this.setState({

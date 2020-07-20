@@ -7,6 +7,13 @@ exports.getPosts = (req, res) => {
             .catch(err => res.status(500).send(err.message)); //caso de reject
 };
 
+exports.getUserPosts = (req, res) => {
+    return postService
+        .getUserPosts(req.params.id)
+            .then(result => res.json(result))
+            .catch(err => res.status(500).send(err.message));
+};
+
 exports.getPost = (req, res) => {
     return postService
         .getPost(req.params.id)

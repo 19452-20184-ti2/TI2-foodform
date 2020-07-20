@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 
-export default class OwnedPost extends React.Component { 
+export default class OwnedPost extends React.Component {
     constructor(props){
         super(props);
     }
-
     render(){
         return(
             <div className="postContainer">
@@ -18,8 +17,8 @@ export default class OwnedPost extends React.Component {
                 </div>
                 <div className="optionsContainer">
                     <Link to={`post/${this.props.id}`}><Button variant="secondary">View</Button></Link>
-                    <Button variant="secondary">Edit</Button>
-                    <Button variant="danger">Delete</Button>
+                    <Button variant="secondary" onClick>Edit</Button>
+                    <Button variant="danger" onClick="">Delete</Button>
                 </div>
             </div>
         );

@@ -4,7 +4,6 @@ import AuthContext from "../../configs/authContext";
 import "./Post.css";
 import {Button, Form} from "react-bootstrap";
 import Comment from "../../components/comment/Comment.js";
-import { set } from "mongoose";
 
 export default class Post extends React.Component{
     constructor(props){
@@ -23,14 +22,9 @@ export default class Post extends React.Component{
     static contextType = AuthContext;
 
     componentDidMount = () => {
-        services.post.getOnePost(this.props.match.params.id)
-        .then((value) => this.setState({ post: value}))
-        .catch((err) => this.setState({ error: err }));
-        
+        this.apiCallGetOnePost(this.props.match.params.id);
         this.apiCallGetComments();
-
         this.apiCallGetLikes();
-
         const {user} = this.context;
         user && this.setState({userID: user._id});
     }
@@ -41,19 +35,21 @@ export default class Post extends React.Component{
           this.setState({commented: false});
         }
       }
-
-    apiCallGetLikes = () =>{
+    
+    apiCallGetOnePost = id =>services.post.getOnePost(id)
+        .then((value) => this.setState({ post: value}))
+        .catch((err) => this.setState({ error: err }));
+    
+    apiCallGetLikes = () =>
             services.like.getPostLikes(this.props.match.params.id)
             .then((value) => this.setState({ likes: value }))
             .catch((err) => this.setState({ error: err }));
-    }
         
 
-    apiCallGetComments = () =>{
+    apiCallGetComments = () =>
             services.comment.getPostComments(this.props.match.params.id)
             .then((value) => this.setState({ comments: value }))
             .catch((err) => this.setState({ error: err }));
-    }
         
 
     listOfIngredients = () => {

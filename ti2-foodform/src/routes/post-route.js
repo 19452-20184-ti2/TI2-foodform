@@ -11,6 +11,7 @@ const roles = require('../helpers/roles');
 //posts
 router.get('', postController.getPosts);
 router.get('/:id', postController.getPost);
+router.get('/user/:id', authorize(roles.User), postController.getUserPosts);
 router.post('/upload', authorize(roles.User), postController.postPost);
 router.put('/:id', authorize(roles.User), postController.putPost);
 router.delete('/:id', authorize(roles.User), postController.deletePost);
