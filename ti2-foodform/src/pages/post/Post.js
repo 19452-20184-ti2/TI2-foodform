@@ -13,6 +13,7 @@ export default class Post extends React.Component{
             liked: false,
             post:[],
             userID:"",
+            commented: false,
             comment:"",
             comments:[],
             likes:[],
@@ -26,19 +27,34 @@ export default class Post extends React.Component{
         .then((value) => this.setState({ post: value}))
         .catch((err) => this.setState({ error: err }));
         
-        services.comment.getPostComments(this.props.match.params.id)
-        .then((value) => this.setState({ comments: value }))
-        .catch((err) => this.setState({ error: err }));
+        this.apiCallGetComments();
 
-        services.like.getPostLikes(this.props.match.params.id)
-        .then((value) => this.setState({ likes: value }))
-        .catch((err) => this.setState({ error: err }));
-
+        this.apiCallGetLikes();
 
         const {user} = this.context;
         user && this.setState({userID: user._id});
     }
 
+    componentDidUpdate = (prevProps, prevState) => {
+        if((prevState.commented === false && this.state.commented === true) || prevState.comments.length !== this.state.comments.length) {
+          this.apiCallGetComments(); 
+          this.setState({commented: false});
+        }
+      }
+
+    apiCallGetLikes = () =>{
+            services.like.getPostLikes(this.props.match.params.id)
+            .then((value) => this.setState({ likes: value }))
+            .catch((err) => this.setState({ error: err }));
+    }
+        
+
+    apiCallGetComments = () =>{
+            services.comment.getPostComments(this.props.match.params.id)
+            .then((value) => this.setState({ comments: value }))
+            .catch((err) => this.setState({ error: err }));
+    }
+        
 
     listOfIngredients = () => {
         if(this.state.post.ingredients !== undefined){
@@ -56,14 +72,17 @@ export default class Post extends React.Component{
         <Comment userID={c.userID} date={c.date.slice(0,10)} content={c.content}/>
     );
 
-    handleSubmit = () =>{
+    handleSubmit = (evt) =>{
+        evt.preventDefault(evt);
         if(this.state.comment !== ""){
             services.comment.createPostComment(
             this.props.match.params.id,
             {
                 content: this.state.comment,
                 userID: this.state.userID
-            });
+            })
+            .then(() => this.setState({commented: true}))
+            .catch((err) => this.setState({error: err}));
         }
     }
 
@@ -75,13 +94,14 @@ export default class Post extends React.Component{
                 userID: this.state.userID,
                 liked:true
             }
-        );
+        ).then(() => this.apiCallGetLikes())
+        .catch((err) => this.setState({ error: err }));
     }
 
     handleUnlike = () => {
-        this.setState({liked: true});
-        services.like.removePostLike(this.state.userID, this.props.match.params.id);
-        
+        services.like.removePostLike(this.state.userID, this.props.match.params.id)
+        .then(() => this.apiCallGetLikes())
+        .catch((err) => this.setState({ error: err }));
     }
 
     checkLiked = () => {
@@ -94,7 +114,6 @@ export default class Post extends React.Component{
     
 
     render(){
-        this.checkLiked();
         const {user} = this.context;
         return(
         <div className="recipeContainer">
