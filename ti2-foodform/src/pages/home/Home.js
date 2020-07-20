@@ -17,8 +17,7 @@ export default class Home extends React.Component{
 
     componentDidMount = () => this.getPosts();
     
-    getPosts = () => services.post
-        .getAllPosts()
+    getPosts = () => services.post.getAllPosts()
         .then((value) => this.setState({ posts: value}))
         .catch((err) => this.setState({ error: err }));
     

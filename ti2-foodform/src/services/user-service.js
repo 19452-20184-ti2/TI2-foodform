@@ -51,3 +51,9 @@ exports.authenticate = (username, rawPassword) => {
         });    
     });
 };
+
+exports.getUser = id => {
+    return new Promise ((resolve, reject) => {
+        resolve(User.findById(id));
+    });
+};

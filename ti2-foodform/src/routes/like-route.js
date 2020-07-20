@@ -7,6 +7,6 @@ const authorize = require('../configs/authorization');
 const roles = require('../helpers/roles');
 
 //so para testes
-router.get('', authorize(roles.User, roles.Admin), likeController.getLikes);
+router.get('', authorize(roles.User), likeController.getLikes);
 
 module.exports = router;

@@ -1,0 +1,11 @@
+.recipeContainer{
+    display:flex;
+}
+
+.mainContainer{
+    width:50%;
+}
+
+.mainImg{
+    width:100%;
+}
