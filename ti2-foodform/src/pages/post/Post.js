@@ -36,7 +36,7 @@ export default class Post extends React.Component{
         }
       }
     
-    apiCallGetOnePost = id =>services.post.getOnePost(id)
+    apiCallGetOnePost = id => services.post.getOnePost(id)
         .then((value) => this.setState({ post: value}))
         .catch((err) => this.setState({ error: err }));
     

@@ -40,13 +40,17 @@ export default class User extends React.Component {
             imgURL={p.imgURL}
             title={p.title}
             user={p.userID}
+            view={this.redirectToPost}
+            edit={this.redirectToPostEdit}
             delete={this.apiCallDeletePost}
         />
     });
 
+    redirectToPost = id => this.props.history.push(`/post/${id}`);
+
+    redirectToPostEdit = id => this.props.history.push(`/edit/${id}`);
+
     render(){
-        console.log(this.state);
-        console.log(this.renderMyPosts());
         return( 
             <div className="userPageContainer">
                 <div className="userInfo">

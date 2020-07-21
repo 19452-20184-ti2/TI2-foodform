@@ -10,6 +10,7 @@ import UploadPage from "../pages/upload/Upload"
 import UserPage from "../pages/user/User"
 import LoginPage from "../pages/auth/Login";
 import RegisterPage from "../pages/auth/Register";
+import EditPage from "../pages/edit/Edit";
 
 export default class RouterComponent extends React.Component{
     render(){
@@ -21,8 +22,9 @@ export default class RouterComponent extends React.Component{
                     <Route exact path="/login" component = {LoginPage}/>
                     <Route exact path="/about" component = {AboutPage}/>
                     <Route exact path = "/post/:id" component = {PostPage}/>
-                    <PrivateRoute roles = {[1,2]} exact path = "/upload" component = {UploadPage}/>
-                    <PrivateRoute roles = {[1,2]} exact path = "/user/:uid" component = {UserPage}/>
+                    <PrivateRoute roles = {[1]} exact path = "/upload" component = {UploadPage}/>
+                    <PrivateRoute roles = {[1]} exact path = "/edit/:id" component = {EditPage}/>
+                    <PrivateRoute roles = {[1]} exact path = "/user/:uid" component = {UserPage}/>
                     <Route path = "*" component = {HomePage}/>
                 </Switch>
             </Router>
