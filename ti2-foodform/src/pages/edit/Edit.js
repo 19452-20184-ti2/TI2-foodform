@@ -40,7 +40,8 @@ export default class Edit extends React.Component{
     handleSubmit = evt => {
 
         evt.preventDefault();
-        services.post.updatePost(this.props.match.params.id, this.state);
+        services.post.updatePost(this.props.match.params.id, this.state)
+        .then(() => this.props.history.push(`/post/${this.props.match.params.id}`))
     }
 
     render(){
