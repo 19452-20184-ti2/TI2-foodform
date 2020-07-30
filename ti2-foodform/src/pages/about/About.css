@@ -1,14 +1,63 @@
-.biggerContainer{
-    display:flex;
-    justify-content: center;
-}
-.alunoContainer{
-    display:flex;
-    flex-direction: column;
+.evenbiggerContainer{/*entire container*/
+    background-color: #101820;
+    display: flex;
     align-items: center;
-    padding: 5%
+    justify-content: space-around;
+    height: 90vh;
 }
 
-.alunoPhoto{
-    height: 40%;
+.evenbiggerContainer > h3 {
+    margin: 50px;
+    width: 50%;
+    color: white;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 30px;
+    
+
+}
+
+.biggerContainer{/*both students container*/
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.biggerContainer > div {
+    text-align: center;
+}
+
+.biggerContainer > div > p {
+    text-align: center;
+}
+
+.alunoContainer{/*each student container*/
+    margin: 20px;
+    border-radius: 15px;
+    width: 40%;
+    height: 320px;
+    background-color: white;
+    box-shadow:
+    /* The top layer shadow */
+        0 1px 1px rgba(0,0,0,0.15),
+            /* The second layer */
+        0 10px 0 -5px #eee,
+            /* The second layer shadow */
+        0 10px 1px -4px rgba(0,0,0,0.15),
+            /* The third layer */
+        0 20px 0 -10px #eee,
+            /* The third layer shadow */
+        0 20px 1px -9px rgba(0,0,0,0.15);
+}
+
+.alunoPhoto{/*photo dos alunos*/
+    border-radius: 15px;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    
 }

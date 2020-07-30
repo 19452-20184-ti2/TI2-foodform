@@ -18,10 +18,10 @@ export default class Comment extends React.Component{
 
     render(){
         return(
-            <div>
-                <div>
-                    <h2>{this.state.user.username}</h2>
-                    <p>{this.props.date}</p>   
+            <div className="eachComment">
+                <div className="commentTop">
+                    <h3>{this.state.user.username}</h3>
+                    <a>{this.props.date}</a>   
                 </div>
                 <p>{this.props.content}</p>
             </div>

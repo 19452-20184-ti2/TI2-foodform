@@ -26,14 +26,16 @@ export default class OwnedPost extends React.Component {
     render(){
         return(
             <div className="postContainer">
-                <div className="infoContainer">
-                    <img alt="post img" src={this.props.imgURL} className="receitaIMG"/>
-                    <p>{this.props.title}</p>
-                </div>
-                <div className="optionsContainer">
-                    <Button variant="secondary" onClick={(evt) => this.handleView(evt)}>View</Button>
-                    <Button variant="secondary" onClick={(evt) => this.handleEdit(evt)}>Edit</Button>
-                    <Button variant="danger" onClick={(evt) => this.handleDelete(evt)}>Delete</Button>
+                <div className="myInfoContainer">
+                    <img alt="post img" src={this.props.imgURL} className="myReceitaIMG"/>
+                    <div>
+                        <h2>{this.props.title}</h2>
+                        <div className="optionsContainer">
+                            <Button variant="secondary" onClick={(evt) => this.handleView(evt)}>View</Button>
+                            <Button variant="secondary" onClick={(evt) => this.handleEdit(evt)}>Edit</Button>
+                            <Button variant="danger" onClick={(evt) => this.handleDelete(evt)}>Delete</Button>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

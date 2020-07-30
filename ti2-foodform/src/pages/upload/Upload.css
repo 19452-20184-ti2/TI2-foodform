@@ -1,12 +1,8 @@
-body, html{/*whole body*/
-    background-color: #101820;
-}
-#auth-board{/*entire board*/
-    height:80vh ;
+.uploadContainer {
+    height:90vh ;
     background-color: #101820;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
 }
-

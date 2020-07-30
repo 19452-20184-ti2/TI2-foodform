@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Card, Button } from 'react-bootstrap'
 import services from"../../services";
 import AuthContext from "../../configs/authContext";
+import "../upload/Upload.css";
 
 export default class Edit extends React.Component{
     constructor(props){
@@ -46,7 +47,8 @@ export default class Edit extends React.Component{
         return(
             <div>
                 {this.validateUser && 
-                    <div>
+                    <div className="uploadContainer">
+                    <Card style = {{width:"24rem"},{border:"15px solid white"}}>
                         <Form onSubmit={(evt)=>this.handleSubmit(evt)} >
                             <Card.Title>Edit your post</Card.Title>
 
@@ -72,6 +74,7 @@ export default class Edit extends React.Component{
                             </Form.Group>
                             <Button variant="primary" type="submit" block>Submit</Button>
                         </Form>
+                    </Card>
                     </div>
                 }
             </div>

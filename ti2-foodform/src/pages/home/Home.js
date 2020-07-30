@@ -88,7 +88,7 @@ export default class Home extends React.Component{
         return receitas;
     }
 
-    render(){
+    render(){ console.log(this.state.posts)
         if(this.state.search === "" & this.state.error === undefined){
             return(
                 <div className="homeContainer">

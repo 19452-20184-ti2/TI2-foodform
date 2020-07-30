@@ -1,4 +1,35 @@
-.postContainer{
-    width:200px;
-    display:flex
+.postContainer{/*contains each individual post*/
+    width:50vw;
+    display:flex;
+    border-radius: 15px;
+    height: 85%;
+    
+    
+}
+
+.myInfoContainer{/*img and title from the post and options*/
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: #ffc72c;
+    border-radius: 50px;
+    height:90%;
+}
+
+.myReceitaIMG{ /*img alone*/
+    border-radius: 15px;
+    height: 75%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+.nonIMG{ /*whats in there exept the img*/
+    flex-direction: row;
+}
+.optionsContainer{/*options container*/
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:25%;
 }

@@ -1,13 +1,38 @@
-.userPageContainer{
+.userPageContainer{ /*contains the user page*/
+    background-color: #101820;
     display:flex;
-    height:100%
+    align-items: center;
+    justify-content: space-around;
+    height:90vh;
 }
-.userInfo{
+.userInfo{ /*contains the user info such as name and pfp*/
     width:20%;
-    height:100%;
-    background-color: rgb(207, 207, 207);
-    border-right: 2px solid black;
+    height:50%;
+    margin:40px;
+    align-items: center;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow:
+    /* The top layer shadow */
+        0 1px 1px rgba(0,0,0,0.15),
+            /* The second layer */
+        0 10px 0 -5px #eee,
+            /* The second layer shadow */
+        0 10px 1px -4px rgba(0,0,0,0.15),
+            /* The third layer */
+        0 20px 0 -10px #eee,
+            /* The third layer shadow */
+        0 20px 1px -9px rgba(0,0,0,0.15);
 }
-.defaultImg{
-    width:100%
+
+.defaultImg{ /*contains the pfp of the user*/
+    width: 100%;
+}
+
+.userPosts { /*all posts from user*/
+    height: 75vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
 }

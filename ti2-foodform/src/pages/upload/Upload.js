@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Card, Button } from 'react-bootstrap'
 import services from"../../services";
 import AuthContext from "../../configs/authContext";
-
+import "./Upload.css";
 
 export default class Upload extends React.Component{
     constructor(props){
@@ -29,7 +29,8 @@ export default class Upload extends React.Component{
         const {user} = this.context;
         const { title , description, ingredients, imgURL } = this.state;
         return(
-            <div>
+            <div className="uploadContainer">
+                <Card style = {{width:"24rem"},{border:"15px solid white"}}>
                 <Form onSubmit={(evt)=>this.handleSubmit(evt)} >
                     <Card.Title>Create your post</Card.Title>
 
@@ -55,6 +56,7 @@ export default class Upload extends React.Component{
                     </Form.Group>
                     <Button variant="primary" type="submit" onClick={(evt)=>this.setState({userID: user._id})} block>Sumbit</Button>
                 </Form>
+                </Card>
             </div>
         );
     }

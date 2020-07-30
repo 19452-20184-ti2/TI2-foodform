@@ -114,11 +114,15 @@ export default class Post extends React.Component{
         return(
         <div className="recipeContainer">
             <div className="mainContainer">
+                <div>
                 <img className="mainImg" src = {this.state.post.imgURL}/>
-                {user && this.checkLiked()}
-                {user && <p>{this.state.likes.length} Like(s) {this.state.comments.length} Comment(s)</p>}
+                </div>
+                <div className="likes">
+                        {user && this.checkLiked()}
+                        {user && <a> {this.state.likes.length} Like(s) {this.state.comments.length} Comment(s)</a>}
+                </div>
                 <div className="commentsContainer">
-                    {user && 
+                    <div className="yourComment">{user && 
                         <Form onSubmit={(evt)=>this.handleSubmit(evt)}>
                             <Form.Group>
                                 <Form.Control as="textarea" id="commentContent" onChange={(evt)=>this.setState({comment:evt.target.value})}/>
@@ -126,6 +130,7 @@ export default class Post extends React.Component{
                             <Button variant="secondary" type="submit" onClick={()=>this.setState({userID: user._id})}>Comment</Button> 
                         </Form>
                     }
+                    </div>
                     {user && 
                         <div className="scrollComments">
                             {this.renderComments()}
@@ -135,11 +140,13 @@ export default class Post extends React.Component{
             </div>
             <div className="infoContainer">
                 <h1>{this.state.post.title}</h1>
-                <p>{this.state.post.description}</p>
+                <p className="createdData">Created on: {(this.state.post.date != undefined) ? this.state.post.date.slice(0,10) : ""}</p>
+                <h3>Ingredientes:</h3>
                 <ul>
                     {this.listOfIngredients()}
                 </ul>
-                <p>Created on: {(this.state.post.date != undefined) ? this.state.post.date.slice(0,10) : ""}</p>
+                <h3>Descrição:</h3>
+                <p>{this.state.post.description}</p>
             </div>
         </div>
         );

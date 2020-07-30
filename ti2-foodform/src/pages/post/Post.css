@@ -1,11 +1,90 @@
-.recipeContainer{
-    display:flex;
+.recipeContainer { /*everything*/
+    background: #101820;
+    border: 15px solid #101820;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.mainContainer{
-    width:50%;
+.mainContainer{/*left container*/
+    width: 50%;
 }
 
-.mainImg{
+.mainImg{/*image*/
+    border-radius: 15px;
     width:100%;
+    height:100%;
+    object-fit: cover;
+
+}
+
+.likes {/*likes and comments ammount + like botton*/
+    border-radius: 20px;
+    border: 15px solid #101820;
+    background-color: white;   
+    
+}
+
+.commentsContainer {/*All comment related containers*/
+    border-radius: 15px;
+    
+}
+
+.yourComment{/*Your comment botton and box*/
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.scrollComments{/*posted comments*/
+    max-height: 300px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar { /*width of the scrollbars*/
+    width: 10px;
+  }
+  
+::-webkit-scrollbar-track {/*color and curvature of the scroll box*/
+    box-shadow: inset 0 0 10px grey; 
+    border-radius: 15px;
+  }
+   
+ 
+::-webkit-scrollbar-thumb { /*scroll button color and curvature*/
+    background: #1e252c;
+    border-radius: 10px;
+  }
+  
+  
+::-webkit-scrollbar-thumb:hover { /*color of scroll when mouse hover*/
+    background: #080d11; 
+  }
+
+.eachComment { /*cada comment*/
+    border:4px solid #101820;
+    padding:10px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.commentTop {/*top part of a comment as in the user name and date*/
+    display: flex;
+    flex: row;
+    align-items: baseline;
+}
+
+.commentTop > a {/*date of a comment*/
+    margin-left: auto;
+
+}
+
+
+.infoContainer {/*the box on the right*/
+    background: #ffc72c;
+    padding: 2%;
+    border-radius: 15px;
+    width: 45%;
+    height:100%;
 }
