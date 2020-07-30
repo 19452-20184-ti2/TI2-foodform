@@ -71,6 +71,7 @@ export default class Home extends React.Component{
             case "ingredient":
                 receitas = this.state.posts.map(post =>{
                     let ing = post.ingredients.trim().toLowerCase().split(';');
+                    ing = ing.map(p => p.trim());
                     let aux = filter.toLowerCase();
                     if(ing.includes(aux)){
                         return <ReceitaPost

@@ -56,8 +56,9 @@ export default class Post extends React.Component{
         if(this.state.post.ingredients !== undefined){
             const ingredients = this.state.post.ingredients.trim().split(';');
             const listOfIngredients = ingredients.map( ingredient => {
+            
                 if(ingredient !=""){
-                    return<li>{ingredient}</li>; 
+                    return<li>{ingredient.trim()}</li>; 
                 }
             });
             return listOfIngredients;
