@@ -4,13 +4,20 @@ import { Form, Button, Card } from "react-bootstrap";
 import AuthContext from "../../configs/authContext";
 import "./Auth.css"; 
 
+/**
+ * will fill the username and password fields
+ * ...
+ */
 export default class LoginPage extends React.Component{
     static contextType = AuthContext;
     constructor(props){
         super(props);
         this.state = {username:"teste", password:"Bananas1234"};
     }
-    
+    /**
+     * once the event gets triggered it will proceed to login the user
+     * and redirecting it to its respective route.
+     */
     handleSubmit(evt){
         evt.preventDefault();
         services.auth.login(this.state)

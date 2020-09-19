@@ -1,14 +1,16 @@
 .receitaPost{/*each individual post*/
-    
-    border: 15px solid #101820;
-    background: #ffc72c;
+    border: 10px solid #101820;
+    padding:5px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.8);
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
 }
 .receitaIMG{/*each img in the post*/
+    border-radius: 15px;
     object-fit: cover;
     display: flex;
-    width: 260px;
+    width: 290px;
     height: 100%;
 }

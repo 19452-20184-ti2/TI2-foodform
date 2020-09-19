@@ -3,6 +3,10 @@ import services from"../../services";
 import {Form,Button,Card} from "react-bootstrap";
 import "./Auth.css"; 
 
+/**
+ * will get the username, password and roll desired
+ * by the creator of the new user
+ */
 export default class RegisterPage extends React.Component {
     constructor(props){
         super(props);

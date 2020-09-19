@@ -11,6 +11,7 @@
 }
 
 .feedContainer { /*everything inside home besides search bar, includes things from receitaPosts.ccs*/
+    padding-top: 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;

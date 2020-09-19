@@ -16,6 +16,11 @@ export default class Upload extends React.Component{
         };
     }
     
+    /**
+     * once the event gets triggered it will create a post with
+     * the parameters filled the way the user choose
+     * and proceed to redirect the user to its respective route.
+     */
     handleSubmit(evt) {
         evt.preventDefault();
         services.post.createPost(this.state)

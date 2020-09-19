@@ -10,12 +10,15 @@ export default class Comment extends React.Component{
             error: undefined
         }
     }
-
+    /**
+     * Requests to the API the corresponding user
+     * @param {String} userID - The Specific ID of the user
+     */
     componentDidMount = () => 
         services.user.getUser(this.props.userID)
             .then((value) => this.setState({user: value}))
             .catch((err) => this.setState({ error: err }));
-
+    
     render(){
         return(
             <div className="eachComment">

@@ -2,6 +2,7 @@ import React from "react";
 import Tom from '../../assets/tom.jpg';
 import Trem from '../../assets/trem.jpg';
 import "./About.css"
+
 export default class About extends React.Component{
     render(){
         return(

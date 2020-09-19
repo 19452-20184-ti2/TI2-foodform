@@ -10,7 +10,7 @@ export default class ReceitaPost extends React.Component {
 
     render(){
         return(
-            <div className="receitaPost">
+            <div>
                 <div className="receitaPost">
                 <Link to={`post/${this.props.id}`}><img alt="post img" src={this.props.imgURL} className="receitaIMG"/></Link>
                 <h3>{this.props.title}</h3>

@@ -18,10 +18,24 @@ export default class Edit extends React.Component{
 
     static contextType = AuthContext;
 
+    /**
+     * Once all the elements of the page are rendered
+     * it will run apiCallGetPost
+     */
     componentDidMount = () => {
         this.apiCallGetPost(this.props.match.params.id);
     }
 
+    /**
+     * Will request the ID of the post the user choose to edit to the API
+     * @param {String} id  - id of the post
+     * Gets the following values:
+     * @param {String} title - title of the post
+     * @param {String} description - description of the post
+     * @param {String} ingredients - title of the post
+     * @param {String} imgURL - the URL of the image shown in the post
+     * @param {String} userID - ID of the user who posted it
+     */
     apiCallGetPost = id => services.post.getOnePost(id)
         .then((value) => this.setState({
             title: value.title,
@@ -32,11 +46,20 @@ export default class Edit extends React.Component{
         }))
         .catch((err) => this.setState({ error: err }));
 
+    /**
+     * checks if both IDs r the same so that the user
+     * can be validated
+     * @param {String} _id - ID of the post
+     * @returns {Boolean} - if the _id is the same as the userID
+     */
     validateUser = id => {
         const {user} = this.context;
         return user._id === this.state.userID ? true : false;
     }
-
+    /**
+     * once the event gets triggered it will match update its parameters
+     * and proceed to redirect the user to its respective route.
+     */
     handleSubmit = evt => {
 
         evt.preventDefault();

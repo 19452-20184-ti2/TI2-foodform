@@ -17,10 +17,20 @@ export default class Home extends React.Component{
 
     componentDidMount = () => this.getPosts();
     
+    /**
+     * Will request to the API all posts
+     */
     getPosts = () => services.post.getAllPosts()
         .then((value) => this.setState({ posts: value}))
         .catch((err) => this.setState({ error: err }));
     
+    /**
+     * for each post it will
+     * check how many ingredients the recipe has
+     * based on the ammount of ";"
+     * @returns {post data} all the information
+     * to be displayed
+     */
     renderAllPosts = () =>
         this.state.posts.map( post => {
             let ing = post.ingredients.trim().split(';');
@@ -33,14 +43,22 @@ export default class Home extends React.Component{
                 ingredients = {ing.length-1}
             />
         });
-
+    /**
+     * will set the "searchType" as "title"
+     * and "searchParameter" as the value inputed
+     * by the user to later be user in "renderPostsBySearch"
+     */
     showPostsByTitle = () => {
         this.setState({
             search: document.getElementById("searchParameter").value,
             searchType: "title"
         });
     }
-
+    /**
+     * will set the "searchType" as "ingredient"
+     * and "searchParameter" as the value inputed
+     * by the user to later be user in "renderPostsBySearch"
+     */
     showPostsByIngredient = () => {
         this.setState({
             search: document.getElementById("searchParameter").value,
@@ -48,6 +66,13 @@ export default class Home extends React.Component{
         });
     }
 
+    /**
+     * depending on the type of search it will return
+     * all the post data needed.
+     * @param {String} filter - will be used to check if any title
+     * or any ingredient (this depending on the search method used)
+     * includes the search term being used.
+     */
     renderPostsBySearch = filter => {
         let receitas = [];
         switch (this.state.searchType) {
